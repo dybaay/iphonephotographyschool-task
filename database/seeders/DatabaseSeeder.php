@@ -20,52 +20,52 @@ class DatabaseSeeder extends Seeder
         return [
             [
                 'type' => 'lesson',
-                'count' => 1,
+                'action_count' => 1,
                 'name' => 'First Lesson Watched'
             ],
             [
                 'type' => 'lesson',
-                'count' => 5,
+                'action_count' => 5,
                 'name' => '5 Lessons Watched'
             ],
             [
                 'type' => 'lesson',
-                'count' => 10,
+                'action_count' => 10,
                 'name' => '10 Lessons Watched'
             ],
             [
                 'type' => 'lesson',
-                'count' => 25,
+                'action_count' => 25,
                 'name' => '25 Lessons Watched'
             ],
             [
                 'type' => 'lesson',
-                'count' => 50,
+                'action_count' => 50,
                 'name' => '50 Lessons Watched'
             ],
             [
                 'type' => 'comment',
-                'count' => 1,
+                'action_count' => 1,
                 'name' => 'First Comment Written'
             ],
             [
                 'type' => 'comment',
-                'count' => 3,
+                'action_count' => 3,
                 'name' => '3 Comments Written'
             ],
             [
                 'type' => 'comment',
-                'count' => 5,
+                'action_count' => 5,
                 'name' => '5 Comments Written'
             ],
             [
                 'type' => 'comment',
-                'count' => 10,
+                'action_count' => 10,
                 'name' => '25 Comments Written'
             ],
             [
                 'type' => 'comment',
-                'count' => 20,
+                'action_count' => 20,
                 'name' => '50 Comments Written'
             ]
         ];

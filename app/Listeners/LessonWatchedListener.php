@@ -19,7 +19,7 @@ class LessonWatchedListener
 
         $lesson_achievement = Achievement::query()
             ->where('type', 'lesson')
-            ->where('count', $lesson_count)
+            ->where('action_count', $lesson_count)
             ->first();
 
         if ($lesson_achievement) {

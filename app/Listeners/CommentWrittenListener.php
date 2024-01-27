@@ -20,7 +20,7 @@ class CommentWrittenListener
 
         $comment_achievement = Achievement::query()
             ->where('type', 'comment')
-            ->where('count', $comment_count)
+            ->where('action_count', $comment_count)
             ->first();
 
         if ($comment_achievement) {

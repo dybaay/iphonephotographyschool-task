@@ -17,7 +17,7 @@ class Achievement extends Model
      */
     protected $fillable = [
         'type',
-        'count',
+        'action_count',
         'name'
     ];
 
