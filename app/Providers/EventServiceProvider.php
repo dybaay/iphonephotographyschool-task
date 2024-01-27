@@ -6,8 +6,12 @@ use App\Events\AchievementUnlockedEvent;
 use App\Events\BadgeUnlockedEvent;
 use App\Events\CommentWritten;
 use App\Events\LessonWatched;
+use App\Listeners\AchievementUnlockedListener;
 use App\Listeners\BadgeAndAchievementUnlockedListener;
+use App\Listeners\BadgeUnlockedListener;
+use App\Listeners\CommentWrittenListener;
 use App\Listeners\LessonWatchedAndCommentWrittenListener;
+use App\Listeners\LessonWatchedListener;
 use App\Models\Comment;
 use App\Models\User;
 use App\Observers\CommentObserver;
@@ -25,24 +29,21 @@ class EventServiceProvider extends ServiceProvider
      * @var array<class-string, array<int, class-string>>
      */
     protected $listen = [
-        Registered::class => [
-            SendEmailVerificationNotification::class,
-        ],
 
         CommentWritten::class => [
-            LessonWatchedAndCommentWrittenListener::class
+            CommentWrittenListener::class
         ],
 
         LessonWatched::class => [
-            LessonWatchedAndCommentWrittenListener::class
+            LessonWatchedListener::class
         ],
 
         BadgeUnlockedEvent::class => [
-            BadgeAndAchievementUnlockedListener::class
+            BadgeUnlockedListener::class
         ],
 
         AchievementUnlockedEvent::class => [
-            BadgeAndAchievementUnlockedListener::class
+            AchievementUnlockedListener::class
         ]
     ];
 
