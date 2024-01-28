@@ -1,6 +1,6 @@
 # iPhonePhotographySchool Task
---The application emphasizes flexibility, with data retrieval from the database instead of hard-coding.
---The code has been refactored to improve testability.
+* The application emphasizes flexibility, with data retrieval from the database instead of hard-coding.
+* The code has been refactored to improve testability.
 
 ## Setup Instructions
 
