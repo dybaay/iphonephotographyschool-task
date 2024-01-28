@@ -38,7 +38,9 @@ class AchievementUnlockedListener
     {
         $user = $event->user;
         $achievement_id = $event->achievement_id;
-        $user->achievements()->syncWithoutDetaching([$achievement_id]);
+        $user->achievements()->syncWithoutDetaching([$achievement_id => [
+            'created_at' => now()
+        ]]);
         $this->calculateBadge($user);
     }
 }

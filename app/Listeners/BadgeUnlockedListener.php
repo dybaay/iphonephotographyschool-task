@@ -16,6 +16,9 @@ class BadgeUnlockedListener
     {
         $user = $event->user;
         $badge_id = $event->badge_id;
-        $user->badges()->syncWithoutDetaching([$badge_id]);
+        $user->badges()->syncWithoutDetaching([$badge_id => [
+            'created_at' => now()
+        ]
+        ]);
     }
 }

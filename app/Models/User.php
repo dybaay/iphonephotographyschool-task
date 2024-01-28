@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -93,7 +94,12 @@ class User extends Authenticatable
 
     public function currentBadge(): mixed
     {
-       return $this->badges()->latest()->first();
+        $badge= DB::table('badge_user')
+            ->where('user_id', 1)
+            ->orderByDesc('created_at')
+            ->first('badge_id');
+
+       return Badge::query()->find($badge->badge_id);
     }
 }
 

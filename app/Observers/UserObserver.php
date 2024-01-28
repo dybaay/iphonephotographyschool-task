@@ -13,6 +13,8 @@ class UserObserver
     public function created(User $user): void
     {
         $badge = Badge::query()->firstWhere('achievement_count', 0);
-        $user->badges()->attach($badge->id);
+        $user->badges()->attach($badge->id, [
+            'created_at' => now()
+        ]);
     }
 }

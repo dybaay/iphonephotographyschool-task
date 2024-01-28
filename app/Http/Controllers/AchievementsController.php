@@ -6,6 +6,7 @@ use App\Models\Achievement;
 use App\Models\Badge;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\DB;
 
 class AchievementsController extends Controller
 {
@@ -21,7 +22,7 @@ class AchievementsController extends Controller
         $unlocked_achievements = $user->achievements()
             ->pluck('name')
             ->toArray();
-        $next_available_achievements = array_diff($achievements, $unlocked_achievements);
+        $next_available_achievements = array_values(array_diff($achievements, $unlocked_achievements));
         $current_badge = $user->currentBadge()->name;
         $current_badge_index = array_search($user->currentBadge()->achievement_count, $badges);
         $next_badge = '';
